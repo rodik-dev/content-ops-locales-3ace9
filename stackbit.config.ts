@@ -136,7 +136,7 @@ const config = defineStackbitConfig({
                             stableId: document.srcObjectId
                         }
                     }
-                }
+                
             })
         ];
     }
