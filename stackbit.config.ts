@@ -126,7 +126,7 @@ const config = defineStackbitConfig({
             // return ...
                             case 'PageLayout':
                                 return {
-
+                                    urlPath
                                 }
                         }
                     })
