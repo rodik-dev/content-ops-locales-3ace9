@@ -120,8 +120,8 @@ const config = defineStackbitConfig({
             }),
             ...documents.map((document) => {
                 switch (document.modelName) {
-                    //                 case 'PostFeedLayout':
-                    //                     return ...
+                                    case 'PostFeedLayout':
+                                        return ...
                     //                 case 'PostLayout':
                     // return ...
                     case 'PageLayout':
