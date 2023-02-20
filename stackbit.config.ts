@@ -127,8 +127,8 @@ const config = defineStackbitConfig({
                             case 'PageLayout':
                                 return {
                                     urlPath: '',
-                                    label: '',
-                                    stableId: '',
+                                    label: document.fields.title,
+                                    stableId: document.srcObjectId,
                                     locale: ''
                                 }
                         }
