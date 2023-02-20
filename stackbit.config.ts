@@ -127,7 +127,6 @@ const config = defineStackbitConfig({
                             stableId: document.srcObjectId,
                             locale: ''
                         }
-                // }
                     //                 case 'PostLayout':
                     // return ...
                     case 'PageLayout':
