@@ -123,13 +123,12 @@ const config = defineStackbitConfig({
                     case 'PostFeedLayout':
                         return ...
                     case 'PostLayout':
-                        return ...
+    return ...
                     default:
                         return ...
                 }
             })
         ];
     }
-
 });
 export default config;
