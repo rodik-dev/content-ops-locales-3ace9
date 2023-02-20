@@ -118,21 +118,21 @@ const config = defineStackbitConfig({
                     }
                     : null;
             }),
-                    ...documents.map((document) => {
-                        switch (document.modelName) {
-            //                 case 'PostFeedLayout':
-            //                     return ...
-            //                 case 'PostLayout':
-            // return ...
-                            case 'PageLayout':
-                                return {
-                                    urlPath: '',
-                                    label: document.fields.title,
-                                    stableId: document.srcObjectId,
-                                    locale: ''
-                                }
+            ...documents.map((document) => {
+                switch (document.modelName) {
+                    //                 case 'PostFeedLayout':
+                    //                     return ...
+                    //                 case 'PostLayout':
+                    // return ...
+                    case 'PageLayout':
+                        return {
+                            urlPath: '',
+                            label: document.fields.title.value,
+                            stableId: document.srcObjectId,
+                            locale: ''
                         }
-                    })
+                }
+            })
         ];
     }
 });
