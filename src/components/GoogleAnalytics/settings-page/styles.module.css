@@ -1,0 +1,68 @@
+.container {
+    padding: 40px 40px;
+    background-color: #efefec;
+    font-family: 'ES Klarheit Grotesk';
+    min-height: 100vh;
+}
+
+.title {
+    font-size: 32px;
+    line-height: 40px;
+    color: #000024;
+    margin-bottom: 32px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: min-content;
+    margin-left: 0;
+}
+
+.control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.controlLabel {
+    flex-grow: 1;
+    white-space: nowrap;
+}
+
+.tag {
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    font-size: 0.8rem;
+    min-width: 115px;
+    text-align: center;
+}
+
+.tag.ok {
+    background-color: #3da673;
+}
+
+.tag.error {
+    background-color: #c63d03;
+}
+
+.comingSoonContainer {
+    position: relative;
+    margin: 30px -20px;
+}
+
+.comingSoonBadge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4c57c5;
+    color: white;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 12px 12px;
+    border-radius: 3px;
+}

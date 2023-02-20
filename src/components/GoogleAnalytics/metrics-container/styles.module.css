@@ -1,0 +1,55 @@
+.metricsContainer {
+    display: flex;
+    padding: 32px 24px;
+}
+
+.metric {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.leftMetric {
+    padding-right: 40px;
+    border-right: 1px solid #dfdfd7;
+}
+
+.midMetric {
+    padding: 0 40px;
+    border-right: 1px solid #dfdfd7;
+    width: 30%;
+}
+
+.rightMetric {
+    padding-left: 40px;
+}
+
+.metricTitle {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 153%;
+    letter-spacing: -0.003em;
+    color: #51514d;
+}
+
+.metricValue {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: #000024;
+}
+
+.badgeValue {
+    padding: 4px 8px;
+    background: #e1e9fe;
+    border-radius: 2px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    white-space: no-wrap;
+}
+
+.error {
+    text-decoration: underline;
+    cursor: pointer;
+}

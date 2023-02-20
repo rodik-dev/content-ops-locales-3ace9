@@ -1,0 +1,54 @@
+{
+    "name": "content-ops-theme",
+    "version": "0.1.0",
+    "engines": {
+        "node": ">=16"
+    },
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start"
+    },
+    "dependencies": {
+        "@algolia/autocomplete-js": "^1.7.1",
+        "@algolia/autocomplete-theme-classic": "^1.7.1",
+        "@google-analytics/data": "^3.1.1",
+        "@ninetailed/experience.js-next": "^2.2.8",
+        "algoliasearch": "^4.14.2",
+        "axios": "^1.1.2",
+        "classnames": "^2.3.2",
+        "contentful": "^9.3.2",
+        "dayjs": "^1.11.5",
+        "front-matter": "^4.0.2",
+        "jose": "^3.20.4",
+        "markdown-to-jsx": "^7.1.7",
+        "marked": "^4.1.1",
+        "md5": "^2.3.0",
+        "next": "^12.3.1",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "sourcebit": "^0.11.1",
+        "sourcebit-source-contentful": "^0.6.8",
+        "sourcebit-target-next": "^0.8.3",
+        "swiper": "^9.0.4",
+        "tailwindcss": "^3.2.6"
+    },
+    "devDependencies": {
+        "@base2/pretty-print-object": "^1.0.2",
+        "@netlify/plugin-nextjs": "^4.29.3",
+        "@stackbit/cms-contentful": "^0.0.54",
+        "@stackbit/types": "^0.1.10",
+        "@types/glob": "^8.0.0",
+        "@types/gtag.js": "^0.0.12",
+        "@types/md5": "^2.3.2",
+        "@types/react": "^18.0.21",
+        "@types/react-dom": "^18.0.10",
+        "autoprefixer": "^10.4.12",
+        "contentful-export": "^7.18.16",
+        "contentful-import": "^8.5.28",
+        "contentful-management": "^10.29.1",
+        "prettier": "^2.7.1",
+        "typescript": "^4.9.5"
+    },
+    "main": "next.config.js"
+}
