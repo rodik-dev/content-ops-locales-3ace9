@@ -106,7 +106,6 @@ const config = defineStackbitConfig({
         });
     },
 
-    /*
     siteMap({ documents }) {
         return [
             ...LOCALES.map((locale) => {
