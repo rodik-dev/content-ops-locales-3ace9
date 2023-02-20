@@ -130,7 +130,6 @@ const config = defineStackbitConfig({
             })
         ];
     }
-    */
 
 });
 export default config;
