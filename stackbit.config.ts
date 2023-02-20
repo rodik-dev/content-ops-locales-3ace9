@@ -124,7 +124,7 @@ const config = defineStackbitConfig({
             //                     return ...
             //                 case 'PostLayout':
             // return ...
-                            default '':
+                            case 'PageLayout':
                                 return {
 
                                 }
