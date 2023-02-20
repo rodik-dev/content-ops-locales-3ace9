@@ -108,16 +108,6 @@ const config = defineStackbitConfig({
 
     siteMap({ documents }) {
         return [
-            ...LOCALES.map((locale) => {
-                return locale !== DEFAULT_LOCALE
-                    ? {
-                        label: locale,
-                        urlPath: `/${locale}`,
-                        stableId: locale,
-                        locale: locale
-                    }
-                    : null;
-            }),
             ...documents.map((document) => {
                 switch (document.modelName) {
                     case 'PostFeedLayout':
