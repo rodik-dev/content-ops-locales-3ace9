@@ -120,22 +120,23 @@ const config = defineStackbitConfig({
             }),
             ...documents.map((document) => {
                 switch (document.modelName) {
-                                    case 'PostFeedLayout':
-                                        return {
+                    case 'PostFeedLayout':
+                        return {
                             urlPath: document.fields.slug.value,
                             label: document.fields.title.value,
-                            stableId: document.srcObjectId
+                            stableId: document.srcObjectId,
+                            locale: ''
                         }
                 }
                     //                 case 'PostLayout':
                     // return ...
                     case 'PageLayout':
-                        return {
-                            urlPath: document.fields.slug.value,
-                            label: document.fields.title.value,
-                            stableId: document.srcObjectId
-                        }
-                }
+    return {
+        urlPath: document.fields.slug.value,
+        label: document.fields.title.value,
+        stableId: document.srcObjectId
+    }
+}
             })
         ];
     }
