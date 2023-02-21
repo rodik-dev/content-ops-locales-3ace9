@@ -128,7 +128,7 @@ const config = defineStackbitConfig({
                         return {
                             urlPath: document.fields.slug.value,
                             label: document.fields.title.value,
-                            stableId: document.srcObjectId
+                            stableId: 1
                         }
                 }
             })
