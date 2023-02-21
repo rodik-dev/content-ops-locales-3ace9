@@ -19,7 +19,7 @@ function Page(props) {
     return <PageLayout page={page} site={site} />;
 }
 
-export async function getStaticPaths() {
+export async function getStaticPaths({ locales }) {
     const data = await getContent();
     const paths = resolveStaticPaths(data);
     return { paths, fallback: false };
