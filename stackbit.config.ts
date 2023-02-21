@@ -128,7 +128,7 @@ const config = defineStackbitConfig({
                         };
                     case 'PageLayout':
                         return {
-                            urlPath: `$${getSlugPrefix(document)}${document.fields.slug.value}`,
+                            urlPath: `${getSlugPrefix(document)}${document.fields.slug.value}`,
                             label: document.fields.title.value,
                             stableId: document.id
                         };
