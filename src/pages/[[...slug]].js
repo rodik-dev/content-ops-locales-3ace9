@@ -5,6 +5,7 @@ import { resolveStaticProps } from '../utils/static-props-resolvers';
 import { resolveStaticPaths } from '../utils/static-paths-resolvers';
 import { hotContentReload } from 'sourcebit-target-next/hot-content-reload';
 import { usingSourcebit } from '../utils/using-sourcebit';
+import { useRouter } from 'next/router';
 
 function Page(props) {
     const { page, site } = props;
@@ -16,6 +17,17 @@ function Page(props) {
     if (!PageLayout) {
         throw new Error(`no page layout matching the page model: ${modelName}`);
     }
+    const router = useRouter();
+    React.useEffect(() => {
+        window.addEventListener('stackbitLocaleChanged', (event) => {
+            const locale = event?.detail?.locale;
+            console.log('Locale changed in Stackbit: ', locale);
+            if (locale) {
+                router.push({ pathname: router.pathname, query: router.query }, router.asPath, { locale });
+            }
+        })
+    }, [])
+
     return <PageLayout page={page} site={site} />;
 }
 
