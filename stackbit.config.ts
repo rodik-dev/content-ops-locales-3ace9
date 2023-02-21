@@ -119,7 +119,7 @@ const config = defineStackbitConfig({
                         }
                     case 'PostLayout':
                         return {
-                            urlPath: `${document.locale !== DEFAULT_LOCALE ? document.locale + '/' : ''}${document.fields.slug.value}`,
+                            urlPath: `${document.locale !== DEFAULT_LOCALE ? document.locale + '/' : ''}blog/${document.fields.slug.value}`,
                             label: document.fields.title.value,
                             stableId: document.srcObjectId,
                             locale: document.fields.locale.value
