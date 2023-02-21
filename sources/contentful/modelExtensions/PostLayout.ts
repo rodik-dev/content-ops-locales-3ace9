@@ -4,7 +4,7 @@ export const PostLayout: ModelExtension = {
     name: 'PostLayout',
     type: 'page',
     label: 'Post',
-    urlPath: '{params.locale}/blog/{slug}',
+    urlPath: '/blog/{slug}',
     thumbnail: 'https://assets.stackbit.com/components/models/thumbnails/default.png',
     fieldGroups: [
         { name: 'thumbnail', label: 'Thumbnail', icon: 'image' },
