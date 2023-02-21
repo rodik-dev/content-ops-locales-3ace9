@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 import Markdown from 'markdown-to-jsx';
 import classNames from 'classnames';
 
@@ -83,6 +83,7 @@ export default function Footer(props) {
                                                 onChange={(e) => {
                                                     const locale = e.target.value;
                                                     router.push(router.asPath, router.asPath, { locale });
+                                                    console.log('window.stackbit?', window.stackbit);
                                                     (window as any).stackbit?.setLocale(locale);
                                                 }}
                                                 className="block appearance-none w-full bg-white text-black border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
