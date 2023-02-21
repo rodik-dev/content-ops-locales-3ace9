@@ -12,7 +12,7 @@ export function resolveStaticPaths({ pages, objects }) {
             return paths;
         }
         const objectType = page.__metadata?.modelName;
-        const pageUrlPath = page.__metadata?.urlPath;
+        const pageUrlPath = {page.__metadata?.urlPath};
         if (objectType && StaticPathsResolvers[objectType]) {
             const resolver = StaticPathsResolvers[objectType];
             return paths.concat(resolver(page, objects));
