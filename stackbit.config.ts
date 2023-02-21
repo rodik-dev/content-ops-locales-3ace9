@@ -112,7 +112,7 @@ const config = defineStackbitConfig({
                 switch (document.modelName) {
                     case 'PostFeedLayout':
                         return {
-                            urlPath: `${document.fields.slug.value}`,
+                            urlPath: `${document}/${document.fields.slug.value}`,
                             label: document.fields.title.value,
                             stableId: document.srcObjectId,
                             locale: document.fields.locale.value
