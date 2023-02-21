@@ -124,7 +124,7 @@ const config = defineStackbitConfig({
                             urlPath: `${getSlugPrefix(document)}blog/${document.fields.slug.value}`,
                             label: document.fields.title.value,
                             stableId: document.id,
-                            locale: document.fields.locale.value
+                            locale: 1
                         };
                     case 'PageLayout':
                         return {
