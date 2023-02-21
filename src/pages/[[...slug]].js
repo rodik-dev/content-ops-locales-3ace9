@@ -19,18 +19,16 @@ function Page(props) {
     return <PageLayout page={page} site={site} />;
 }
 
-export async function getStaticPaths({ locales }) {
+export async function getStaticPaths({ locales, defaultLocale }) {
     const data = await getContent();
-    const paths = resolveStaticPaths(data);
-    console.log('RETURNING PATHS::', paths.map((item) => ({ slug: item.params.slug, locale: item.locale })), locales);
+    const paths = resolveStaticPaths(data, locales, defaultLocale);
     return { paths, fallback: false };
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params, locale, defaultLocale }) {
     const data = await getContent();
     const urlPath = '/' + (params.slug || []).join('/');
-    console.log('Static props::', { params, urlPath });
-    const props = await resolveStaticProps(urlPath, data);
+    const props = await resolveStaticProps(urlPath, data, locale, defaultLocale);
     return { props };
 }
 

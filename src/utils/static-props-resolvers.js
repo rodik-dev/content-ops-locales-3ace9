@@ -13,10 +13,12 @@ import {
     mapDeepAsync
 } from './data-utils';
 
-export function resolveStaticProps(urlPath, data) {
+export function resolveStaticProps(urlPath, data, locale, defaultLocale) {
     // get root path of paged path: /blog/page/2 => /blog
     const rootUrlPath = getRootPagePath(urlPath);
-    const { __metadata, ...rest } = data.pages.find((page) => page.__metadata.urlPath === rootUrlPath);
+    const { __metadata, ...rest } = data.pages.find(
+        (page) => page.__metadata.urlPath === rootUrlPath && (!page.locale || locale === page.locale)
+    );
     const props = {
         page: {
             __metadata: {
