@@ -22,6 +22,7 @@ function Page(props) {
 export async function getStaticPaths({ locales }) {
     const data = await getContent();
     const paths = resolveStaticPaths(data);
+    console.log("RETURNING PATHS::", paths)
     return { paths, fallback: false };
 }
 
