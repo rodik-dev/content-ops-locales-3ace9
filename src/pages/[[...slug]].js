@@ -23,7 +23,7 @@ function Page(props) {
             const locale = event?.detail?.locale;
             console.log('Locale changed in Stackbit: ', locale);
             if (locale) {
-                router.push({ pathname: router.pathname, query: router.query }, router.asPath, { locale });
+                router.push(router.asPath, router.asPath, { locale });
             }
         })
     }, [])
