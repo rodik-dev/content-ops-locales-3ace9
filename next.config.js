@@ -9,6 +9,10 @@ const nextConfig = {
     env: {
         stackbitPreview: process.env.STACKBIT_PREVIEW
     },
+      i18n: {
+    locales: ['en-US', 'fr', 'nl-NL'],
+    defaultLocale: 'en-US',
+  },
     trailingSlash: true,
     webpack: (config) => {
         config.watchOptions.ignored.push('**/content/pages/**');
