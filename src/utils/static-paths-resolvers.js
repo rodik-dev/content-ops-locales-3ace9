@@ -12,7 +12,8 @@ export function resolveStaticPaths({ pages, objects }) {
             return paths;
         }
         const objectType = page.__metadata?.modelName;
-        const pageUrlPath = {params: {slug: page.__metadata?.urlPath}, locale: ''};
+        console.log("my page::", page)
+        const pageUrlPath = { params: { slug: page.__metadata?.urlPath }, locale: '' };
         if (objectType && StaticPathsResolvers[objectType]) {
             const resolver = StaticPathsResolvers[objectType];
             return paths.concat(resolver(page, objects));
