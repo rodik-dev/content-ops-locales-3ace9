@@ -11,7 +11,7 @@ const nextConfig = {
     },
     i18n: {
         locales: ['en-US', 'es'],
-        defaultLocale: 'en-US',
+        defaultLocale: 'en-US'
     },
     trailingSlash: true,
     webpack: (config) => {

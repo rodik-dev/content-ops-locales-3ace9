@@ -160,14 +160,20 @@ export function getRootPagePath(pagePath) {
 }
 
 export function generatePagedPathsForPage(page, items, numOfItemsPerPage) {
-    const pageUrlPath = page.__metadata?.urlPath;
+    const pageUrlPath = { params: { slug: page.__metadata?.urlPath.split('/').filter(Boolean) }, locale: page.locale };
     if (numOfItemsPerPage === 0) {
         return [pageUrlPath];
     }
     const numOfPages = Math.ceil(items.length / numOfItemsPerPage) || 1;
     const paths = [];
     for (let i = 0; i < numOfPages; i++) {
-        paths.push(i === 0 ? pageUrlPath : `${pageUrlPath}/page/${i + 1}`);
+        const localizedPath = {
+            params: {
+                slug: (i === 0 ? page.__metadata?.urlPath : `${page.__metadata?.urlPath}/page/${i + 1}`).split('/').filter(Boolean)
+            },
+            locale: page.locale
+        };
+        paths.push(localizedPath);
     }
     return paths;
 }

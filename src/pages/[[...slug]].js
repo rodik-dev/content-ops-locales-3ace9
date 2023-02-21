@@ -22,13 +22,14 @@ function Page(props) {
 export async function getStaticPaths({ locales }) {
     const data = await getContent();
     const paths = resolveStaticPaths(data);
-    console.log("RETURNING PATHS::", paths)
+    console.log('RETURNING PATHS::', paths.map((item) => ({ slug: item.params.slug, locale: item.locale })), locales);
     return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
     const data = await getContent();
     const urlPath = '/' + (params.slug || []).join('/');
+    console.log('Static props::', { params, urlPath });
     const props = await resolveStaticProps(urlPath, data);
     return { props };
 }
