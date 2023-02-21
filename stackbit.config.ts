@@ -3,7 +3,7 @@ import { ContentfulContentSource } from '@stackbit/cms-contentful';
 import { allModelExtensions } from './sources/contentful/modelExtensions';
 
 // Array of localized model names
-const LOCALIZED_MODELS = ['PostLayout', 'PostFeedLayout'];
+const LOCALIZED_MODELS = ['PageLayout', 'PostLayout', 'PostFeedLayout'];
 
 // Array of available locales
 const LOCALES = ['en-US', 'es'];
@@ -23,6 +23,8 @@ const getDocumentLocale = (document) => {
 
     return null;
 };
+
+const getSlugPrefix = (document) => (document.locale !== DEFAULT_LOCALE ? document.locale + '/' : '');
 
 class LocalizedContentfulContentSource extends ContentfulContentSource {
     async createDocument(options) {
@@ -112,24 +114,24 @@ const config = defineStackbitConfig({
                 switch (document.modelName) {
                     case 'PostFeedLayout':
                         return {
-                            urlPath: `${document.locale !== DEFAULT_LOCALE ? document.locale + '/' : ''}${document.fields.slug.value}`,
+                            urlPath: `${getSlugPrefix(document)}${document.fields.slug.value}`,
                             label: document.fields.title.value,
                             stableId: document.id,
                             locale: document.fields.locale.value
-                        }
+                        };
                     case 'PostLayout':
                         return {
-                            urlPath: `${document.locale !== DEFAULT_LOCALE ? document.locale + '/' : ''}blog/${document.fields.slug.value}`,
+                            urlPath: `${getSlugPrefix(document)}blog/${document.fields.slug.value}`,
                             label: document.fields.title.value,
                             stableId: document.id,
                             locale: document.fields.locale.value
-                        }
+                        };
                     case 'PageLayout':
                         return {
-                            urlPath: document.fields.slug.value,
+                            urlPath: `$${getSlugPrefix(document)}${document.fields.slug.value}`,
                             label: document.fields.title.value,
                             stableId: document.id
-                        }
+                        };
                 }
             })
         ];

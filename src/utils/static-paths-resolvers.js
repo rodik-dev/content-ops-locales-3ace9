@@ -3,7 +3,8 @@ import {
     getLocaleNonFeaturedPostsSorted,
     getAllCategoryPostsSorted,
     generatePagedPathsForPage,
-    isPublished
+    isPublished,
+    getPageSlugArray
 } from './data-utils';
 
 export function resolveStaticPaths({ pages, objects }, locales, defaultLocale) {
@@ -12,10 +13,7 @@ export function resolveStaticPaths({ pages, objects }, locales, defaultLocale) {
             return paths;
         }
         const objectType = page.__metadata?.modelName;
-        const pageUrlPath = {
-            params: { slug: page.__metadata?.urlPath.split('/').filter(Boolean) },
-            locale: page.locale
-        };
+        const pageUrlPath = { params: { slug: getPageSlugArray(page) }, locale: page.locale };
         if (objectType && StaticPathsResolvers[objectType]) {
             const resolver = StaticPathsResolvers[objectType];
             return paths.concat(resolver(page, objects, locales, defaultLocale));
@@ -38,7 +36,7 @@ const StaticPathsResolvers = {
     },
     PageLayout: (page, objects, locales, defaultLocale) => {
         return locales.map((locale) => ({
-            params: { slug: page.__metadata?.urlPath.split('/').filter(Boolean) },
+            params: { slug: getPageSlugArray(page) },
             locale
         }));
     },

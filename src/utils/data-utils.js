@@ -160,7 +160,7 @@ export function getRootPagePath(pagePath) {
 }
 
 export function generatePagedPathsForPage(page, items, numOfItemsPerPage) {
-    const pageUrlPath = { params: { slug: page.__metadata?.urlPath.split('/').filter(Boolean) }, locale: page.locale };
+    const pageUrlPath = { params: { slug: getPageSlugArray(page) }, locale: page.locale };
     if (numOfItemsPerPage === 0) {
         return [pageUrlPath];
     }
@@ -169,13 +169,19 @@ export function generatePagedPathsForPage(page, items, numOfItemsPerPage) {
     for (let i = 0; i < numOfPages; i++) {
         const localizedPath = {
             params: {
-                slug: (i === 0 ? page.__metadata?.urlPath : `${page.__metadata?.urlPath}/page/${i + 1}`).split('/').filter(Boolean)
+                slug: (i === 0 ? page.__metadata?.urlPath : `${page.__metadata?.urlPath}/page/${i + 1}`)
+                    .split('/')
+                    .filter(Boolean)
             },
             locale: page.locale
         };
         paths.push(localizedPath);
     }
     return paths;
+}
+
+export function getPageSlugArray(page) {
+    return page.__metadata?.urlPath.split('/').filter(Boolean);
 }
 
 export function getPagedItemsForPage(page, items, numOfItemsPerPage) {
