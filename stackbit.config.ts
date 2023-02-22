@@ -3,7 +3,7 @@ import { ContentfulContentSource } from '@stackbit/cms-contentful';
 import { allModelExtensions } from './sources/contentful/modelExtensions';
 
 // Array of localized model names
-const LOCALIZED_MODELS = ['PageLayout', 'PostLayout', 'PostFeedLayout'];
+const LOCALIZED_MODELS = ['PageLayout', 'PostLayout', 'PostFeedLayout', 'GenericSection'];
 
 // Array of available locales
 const LOCALES = ['en-US', 'es'];
