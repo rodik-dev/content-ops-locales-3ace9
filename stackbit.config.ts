@@ -130,7 +130,8 @@ const config = defineStackbitConfig({
                         return {
                             urlPath: `${getSlugPrefix(document)}${document.fields.slug.value}`,
                             label: document.fields.title.value,
-                            stableId: document.id
+                            stableId: document.id,
+                            document
                         };
                 }
             })
