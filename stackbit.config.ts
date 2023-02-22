@@ -109,7 +109,6 @@ const config = defineStackbitConfig({
     },
 
     siteMap({ documents }) {
-        console.log("SITEMAP::", documents);
         return [
             ...documents.map((document) => {
                 switch (document.modelName) {
