@@ -119,15 +119,15 @@ const config = defineStackbitConfig({
                             stableId: document.id,
                             locale: document.fields.locale.value
                                           document
-          };
+                        };
                     case 'PostLayout':
                         return {
                             urlPath: `${getSlugPrefix(document)}blog/${document.fields.slug.value}`,
                             label: document.fields.title.value,
                             stableId: document.id,
-                            locale: 54
+                            locale: document.fields.locale.value,
                                     document
-                };
+                        };
                     case 'PageLayout':
                         return {
                             urlPath: `${getSlugPrefix(document)}${document.fields.slug.value}`,
