@@ -82,7 +82,7 @@ export default function Footer(props) {
                                                 value={router.locale}
                                                 onChange={(e) => {
                                                     const locale = e.target.value;
-                                                    router.push(router.asPath, null, { locale });
+                                                    router.push(router.asPath, router.asPath, { locale });
                                                     console.log('window.stackbit?', window.stackbit);
                                                     (window as any).stackbit?.setLocale(locale);
                                                 }}
