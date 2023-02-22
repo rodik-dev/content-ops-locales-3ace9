@@ -22,7 +22,7 @@ function Page(props) {
         window.addEventListener('stackbitLocaleChanged', (event) => {
             const locale = event?.detail?.locale;
             if (locale) {
-                router.push(window.location.href, window.location.href, {locale});
+                // router.push(window.location.href, null, { locale });
             }
         })
     }, [])
