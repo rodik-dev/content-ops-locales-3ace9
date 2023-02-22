@@ -7,6 +7,11 @@ import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to
 import { Social, Action, Link } from '../../atoms';
 import ImageBlock from '../../blocks/ImageBlock';
 
+const LANGUAGE_NAMES = {
+    'en-US': 'English',
+    'es': 'Spanish'
+};
+
 export default function Footer(props) {
     const {
         colors = 'bg-light-fg-dark',
@@ -95,7 +100,7 @@ export default function Footer(props) {
                                                             // disabled={!Boolean(props.translations[lang])}
                                                             key={lang}
                                                         >
-                                                            {lang}
+                                                            {LANGUAGE_NAMES[lang]}
                                                         </option>
                                                     );
                                                 })}

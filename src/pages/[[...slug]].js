@@ -21,7 +21,6 @@ function Page(props) {
     React.useEffect(() => {
         window.addEventListener('stackbitLocaleChanged', (event) => {
             const locale = event?.detail?.locale;
-            console.log('Locale changed in Stackbit: ', locale);
             if (locale) {
                 router.push(window.location.href, window.location.href, {locale});
             }
