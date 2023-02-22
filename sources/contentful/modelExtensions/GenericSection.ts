@@ -22,6 +22,7 @@ export const GenericSection: ModelExtension = {
                 subtitle: { fontStyle: '*', fontWeight: ['400', '500', '700'], textDecoration: '*', textAlign: '*' },
                 text: { textAlign: '*' }
             }
-        }
+        },
+        { name: 'locale', hidden: false, localized: false }
     ]
 };
