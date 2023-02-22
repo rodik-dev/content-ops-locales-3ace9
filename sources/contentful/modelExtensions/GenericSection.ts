@@ -23,6 +23,6 @@ export const GenericSection: ModelExtension = {
                 text: { textAlign: '*' }
             }
         },
-        { name: 'locale', hidden: false, localized: false }
+        { name: 'locale', hidden: true, localized: false }
     ]
 };
